@@ -5,10 +5,6 @@
     display: flex;
     flex-direction: column; 
     
-    border: solid 1px #3c3c3c;
-    background-color: #3c3c3c;
-    box-shadow: 0px 3px 5px black;
-    border-radius: 5px;
 }
 .sites{
     display: flex;
@@ -40,5 +36,5 @@
     text-align: center;
   }
 .buttonDiv{
-    margin: 0 auto 0 auto;
+    margin: 15px auto 0 auto;
 } 
