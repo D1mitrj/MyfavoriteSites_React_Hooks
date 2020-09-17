@@ -4,20 +4,18 @@ import { Button } from 'chayns-components';
 import PropTypes from 'prop-types'; // Look at the bottom, there is an explanation why you should not delete this.
 import './list.css';
 
-const List = (props) => {
+const List = ({ searchString }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [siteList, setSiteList] = useState([]);
     const [searchFilter, setSearchFilter] = useState('');
     const [listNotShown, setListNotShown] = useState([]);
-    const { searchString } = props;
 
     const showElements = async () => {
         chayns.showWaitCursor();
-        // const { searchString } = this.props;
         setSiteList([]);
 
         try {
-            const response = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${props.searchString}&Skip=0&Take=40`);
+            const response = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchString}&Skip=0&Take=40`);
             const list = await response.json();
 
             // slices the Data from the fetch to 20 elements.

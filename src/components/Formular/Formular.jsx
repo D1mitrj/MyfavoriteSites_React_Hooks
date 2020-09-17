@@ -4,11 +4,11 @@ import { Accordion, Input, Button, TextArea } from 'chayns-components';
 import './formular.css';
 
 const Formular = () => {
-    const [Name, setName] = useState('');
-    const [Email, setEmail] = useState('');
-    const [Adress, setAdress] = useState('');
-    const [Commentarie, setCommentarie] = useState('');
-    const [LinkoftheSite, setLinkoftheSite] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
+    const [commentaries, setCommentaries] = useState('');
+    const [linkoftheSite, setLinkoftheSite] = useState('');
     const [logIn, setLogIn] = useState('');
 
     useEffect(() => {
@@ -23,15 +23,8 @@ const Formular = () => {
             chayns.login();
         } else {
             setLogIn('');
-            const name = Name;
-            const email = Email;
-            const adress = Adress;
-            const commentarie = Commentarie;
-            const linkoftheSite = LinkoftheSite;
-
-
             chayns.intercom.sendMessageToPage({
-                text: `Name: ${name} E-Mail: ${email} Adresse: ${adress} Kommentar: ${commentarie} Link der Seite: ${linkoftheSite}`,
+                text: `Name: ${name} E-Mail: ${email} Adresse: ${address} Kommentar: ${commentaries} Link der Seite: ${linkoftheSite}`,
             })
                 .then((data) => {
                     if (data.status === 200) chayns.dialog.alert('', 'Danke für deinen Kommentar.');
@@ -52,35 +45,35 @@ const Formular = () => {
                         required
                         className="input name"
                         placeholder="Name"
-                        value={Name}
+                        value={name}
                         onChange={(value) => setName(value)}
                     />
                     <Input
                         required
                         className="input e_mail"
                         placeholder="E-Mail"
-                        value={Email}
+                        value={email}
                         onChange={(value) => setEmail(value)}
                     />
                     {/* eslint-disable-next-line max-len */}
                     <Input
                         className="input adresse"
                         placeholder="Adresse (optional)"
-                        value={Adress}
-                        onChange={(value) => setAdress(value)}
+                        value={address}
+                        onChange={(value) => setAddress(value)}
                     />
                     {/* eslint-disable-next-line max-len */}
                     <TextArea
                         className="input kommentar"
                         placeholder="Kommentar"
                         autogrow
-                        value={Commentarie}
-                        onChange={(value) => setCommentarie(value)}
+                        value={commentaries}
+                        onChange={(value) => setCommentaries(value)}
                     />
                     <Input
                         className="input link_der_seite"
                         placeholder="Link der Seite"
-                        value={LinkoftheSite}
+                        value={linkoftheSite}
                         onChange={(value) => setLinkoftheSite(value)}
                     />
                 </div>
