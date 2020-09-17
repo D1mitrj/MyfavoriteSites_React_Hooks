@@ -1,0 +1,8 @@
+.accordion__content{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    align-self: center;
+    margin-top: 10px;
+}
