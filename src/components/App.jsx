@@ -1,12 +1,11 @@
 import { hot } from 'react-hot-loader/root';
 import React, { useState } from 'react';
 import Formular from './Formular/Formular.jsx';
-import SearchSite from './SearchSite/searchSite.jsx';
+import SearchSite from './SearchSite/SearchSite.jsx';
 import List from './Liste/List.jsx';
 import './app.css';
 
-
-const App = () =>{
+const App = () => {
     const [searchString, setSearchString] = useState('ahaus');
     return (
         <div>
