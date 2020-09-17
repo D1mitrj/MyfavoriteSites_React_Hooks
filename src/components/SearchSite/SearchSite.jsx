@@ -22,7 +22,7 @@ const SearchSite = (props) => {
         <div>
             <Input
                 className="input"
-                laceholder="suchen"
+                placeholder="suchen"
                 autogrow
                 onChange={(e) => {
                     SearchSiteInput(e);
@@ -35,7 +35,7 @@ const SearchSite = (props) => {
 
 // when you delete this. You will have a problem with the props of this code.
 SearchSite.propTypes = {
-    setSearchString: PropTypes.string.isRequired,
+    setSearchString: PropTypes.func.isRequired,
 };
 
 export default SearchSite;
