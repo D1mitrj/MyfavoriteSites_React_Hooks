@@ -9,7 +9,7 @@ const App = () => {
     const [searchString, setSearchString] = useState('ahaus');
     return (
         <div>
-            <div className="Titel_texarea">
+            <div className="titel_texarea">
                 <h1>My favorite Sites</h1>
                 <SearchSite
                     setSearchString={
